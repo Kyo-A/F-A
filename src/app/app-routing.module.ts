@@ -39,8 +39,7 @@ const routes: Routes = [
   // On associe un resolver a la route /personne
   { path: 'personne', runGuardsAndResolvers: 'always', component: PersonneComponent, resolve: { routeResolver: PersonResolver } },
   // localhost:4200/details/:id
-  { path: 'details/:id', component: PersonneDetailsComponent ,  resolve:{ 
-    personne : PersonDetailsResolver}  },
+  { path: 'details/:id', component: PersonneDetailsComponent ,  resolve: { personne : PersonDetailsResolver }  },
   // localhost:4200/edit/:id
   { path: 'edit/:id', component: PersonneEditComponent },
   // localhost:4200/rocket

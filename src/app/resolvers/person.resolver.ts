@@ -8,6 +8,8 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Personne } from '../interfaces/personne';
 import { PersonneService } from '../shared/personne.service';
+import { EMPTY } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +27,18 @@ export class PersonResolver implements Resolve<Personne[]> {
   resolve(): Observable<any> {
     return this.personneService.getAllPersons()
       .pipe(map(res => {
-        if (res) {
-          console.log(res);
-          return res;
-        } else {
-          console.log('redirecting');
-          this.route.navigate(['error'], {skipLocationChange: true});
-          return null
-        }
+        console.log(res);
+        return res;
+      }),
+        catchError(() => {
+          this.route.navigate(['/error']);
+          return EMPTY;
       }));
   }
 }
+
+
+
+
+
+
