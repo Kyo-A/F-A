@@ -24,6 +24,7 @@ import { MaterialModule } from './shared/modules/material.module';
 import { TableComponent } from './composants/materials/table/table.component';
 import { AddressFormComponent } from './composants/materials/address-form/address-form.component';
 import { TreeComponent } from './composants/materials/tree/tree.component';
+import { AuthComponent } from './composants/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TreeComponent } from './composants/materials/tree/tree.component';
     RocketEditComponent,
     TableComponent,
     AddressFormComponent,
-    TreeComponent
+    TreeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

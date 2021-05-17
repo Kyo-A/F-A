@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdresseComponent } from './composants/adresse/adresse.component';
+import { AuthComponent } from './composants/auth/auth.component';
 import { ErrorComponent } from './composants/error/error.component';
 import { CalculetteComponent } from './composants/formulaires/calculette/calculette.component';
 import { ReactiveFormComponent } from './composants/formulaires/reactive-form/reactive-form.component';
@@ -16,6 +17,7 @@ import { PersonneComponent } from './composants/personne/personne/personne.compo
 import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edit.component';
 import { RocketComponent } from './composants/rockets/rocket/rocket.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
+import { AuthGuard } from './guards/auth.guard';
 import { PersonDetailsResolver } from './resolvers/person-details.resolver';
 import { PersonResolver } from './resolvers/person.resolver';
 
@@ -38,9 +40,12 @@ const routes: Routes = [
   { path: 'calculette', component: CalculetteComponent },
   // localhost:4200/tp-form
   { path: 'tp-form', component: TpFormComponent },
+  // localhost:4200/auth
+  { path: 'auth', component: AuthComponent },
   // localhost:4200/personne
-  // On associe un resolver a la route /personne
-  { path: 'personne', runGuardsAndResolvers: 'always', component: PersonneComponent, resolve: { routeResolver: PersonResolver } },
+  // On associe un resolver et une guard a la route /personne
+  { path: 'personne', runGuardsAndResolvers: 'always', component: PersonneComponent, resolve: { routeResolver: PersonResolver },
+    canActivate: [AuthGuard]},
   // localhost:4200/details/:id
   { path: 'details/:id', component: PersonneDetailsComponent,  resolve: { personne : PersonDetailsResolver }  },
   // localhost:4200/edit/:id

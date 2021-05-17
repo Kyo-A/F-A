@@ -7,6 +7,17 @@
     <ngx-navbar-collapse class="collapse navbar-collapse" #collapse="ngxNavbarCollapse" >
         <ul class="navbar-nav mr-auto">
             <li *ngFor="let tab of tabs"><a class="nav-link item" routerLink="/{{tab.path}}" routerLinkActive="active"> {{tab.title}}</a></li>    
+            
+            <li *ngIf="isConnected(); else sinon">
+                <a class="nav-link item" (click)='logOut()'>Logout</a>
+              </li>
+              <ng-template #sinon>
+                <li>
+                  <a class="nav-link item" routerLink="auth">
+                    Login
+                  </a>
+                </li>
+              </ng-template> 
         </ul>
     </ngx-navbar-collapse>
 </nav>
