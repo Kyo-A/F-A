@@ -44,6 +44,18 @@ export class AppComponent {
     { 
       title: 'rocket', 
       path: 'rocket',
+    },
+    { 
+      title: 'table', 
+      path: 'table',
+    },
+    { 
+      title: 'tree', 
+      path: 'tree',
+    },
+    { 
+      title: 'address-form', 
+      path: 'address-form',
     }
 
   ];

@@ -7,6 +7,9 @@ import { ReactiveFormComponent } from './composants/formulaires/reactive-form/re
 import { TemplateFormComponent } from './composants/formulaires/template-form/template-form.component';
 import { TpFormComponent } from './composants/formulaires/tp-form/tp-form.component';
 import { HomeComponent } from './composants/home/home.component';
+import { AddressFormComponent } from './composants/materials/address-form/address-form.component';
+import { TableComponent } from './composants/materials/table/table.component';
+import { TreeComponent } from './composants/materials/tree/tree.component';
 import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
 import { PersonneComponent } from './composants/personne/personne/personne.component';
@@ -39,13 +42,19 @@ const routes: Routes = [
   // On associe un resolver a la route /personne
   { path: 'personne', runGuardsAndResolvers: 'always', component: PersonneComponent, resolve: { routeResolver: PersonResolver } },
   // localhost:4200/details/:id
-  { path: 'details/:id', component: PersonneDetailsComponent ,  resolve: { personne : PersonDetailsResolver }  },
+  { path: 'details/:id', component: PersonneDetailsComponent,  resolve: { personne : PersonDetailsResolver }  },
   // localhost:4200/edit/:id
   { path: 'edit/:id', component: PersonneEditComponent },
   // localhost:4200/rocket
   { path: 'rocket', component: RocketComponent },
   // localhost:4200/rocket/:id
   { path: 'edit-rocket/:id', component: RocketEditComponent },
+  // localhost:4200/table
+  { path: 'table', component: TableComponent },
+  // localhost:4200/tree
+  { path: 'tree', component: TreeComponent },
+  // localhost:4200/address-form
+  { path: 'address-form', component: AddressFormComponent },
   // localhost:4200/error
   { path: 'error', component: ErrorComponent },
   // pathMatch = "full" signifie que tout chemin d url doit correspondre

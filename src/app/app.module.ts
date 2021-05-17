@@ -21,6 +21,9 @@ import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edi
 import { NgxBootstrapModule } from './shared/modules/ngx-bootstrap.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/modules/material.module';
+import { TableComponent } from './composants/materials/table/table.component';
+import { AddressFormComponent } from './composants/materials/address-form/address-form.component';
+import { TreeComponent } from './composants/materials/tree/tree.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { MaterialModule } from './shared/modules/material.module';
     PersonneDetailsComponent,
     PersonneEditComponent,
     RocketComponent,
-    RocketEditComponent
+    RocketEditComponent,
+    TableComponent,
+    AddressFormComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,
