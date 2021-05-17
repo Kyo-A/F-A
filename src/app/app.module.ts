@@ -18,6 +18,9 @@ import { PersonneDetailsComponent } from './composants/personne/personne-details
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
 import { RocketComponent } from './composants/rockets/rocket/rocket.component';
 import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edit.component';
+import { NgxBootstrapModule } from './shared/modules/ngx-bootstrap.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/modules/material.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edi
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxBootstrapModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
