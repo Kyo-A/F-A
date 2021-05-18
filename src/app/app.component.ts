@@ -71,6 +71,22 @@ export class AppComponent {
     { 
       title: 'profile', 
       path: 'profile',
+    },
+    { 
+      title: 'camion', 
+      path: 'vehicule/camion',
+    },
+    { 
+      title: 'voiture', 
+      path: 'vehicule/voiture',
+    },
+    { 
+      title: 'features', 
+      path: 'features',
+    },
+    { 
+      title: 'developer', 
+      path: 'developer',
     }
 
   ];

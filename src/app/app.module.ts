@@ -28,6 +28,10 @@ import { AuthComponent } from './composants/auth/auth.component';
 import { RegisterComponent } from './composants/register/register.component';
 import { ProfileComponent } from './composants/profile/profile.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { FeatureCardComponent } from './composants/interactions/feature-card/feature-card.component';
+import { FeaturesComponent } from './composants/interactions/features/features.component';
+import { DeveloperComponent } from './composants/interactions/exercices/developer/developer.component';
+import { SkillComponent } from './composants/interactions/exercices/skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     TreeComponent,
     AuthComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    FeatureCardComponent,
+    FeaturesComponent,
+    DeveloperComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,
@@ -65,4 +73,8 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {   
+  constructor(){
+    console.log("App-module");
+  }
+}

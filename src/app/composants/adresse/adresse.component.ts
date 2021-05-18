@@ -22,7 +22,7 @@ export class AdresseComponent implements OnInit {
     // route /adresse avec deux parametres
     // Dans adresse.component.ts, utilisez la solution snapshot
     // puis observable pour recuperer les parametres. Dans
-    // adresse.component.html, on affiche les param` etres.
+    // adresse.component.html, on affiche les parametres.
     // Verifier, en cliquant sur le lien, que les nouveaux parametres sont
     // affiches
 
