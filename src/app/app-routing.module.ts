@@ -14,6 +14,8 @@ import { TreeComponent } from './composants/materials/tree/tree.component';
 import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
 import { PersonneComponent } from './composants/personne/personne/personne.component';
+import { ProfileComponent } from './composants/profile/profile.component';
+import { RegisterComponent } from './composants/register/register.component';
 import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edit.component';
 import { RocketComponent } from './composants/rockets/rocket/rocket.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
@@ -42,6 +44,10 @@ const routes: Routes = [
   { path: 'tp-form', component: TpFormComponent },
   // localhost:4200/auth
   { path: 'auth', component: AuthComponent },
+  // localhost:4200/register
+  { path: 'register', component: RegisterComponent },
+  // localhost:4200/profile
+  { path: 'profile', component: ProfileComponent },
   // localhost:4200/personne
   // On associe un resolver et une guard a la route /personne
   { path: 'personne', runGuardsAndResolvers: 'always', component: PersonneComponent, resolve: { routeResolver: PersonResolver },

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,9 @@ import { TableComponent } from './composants/materials/table/table.component';
 import { AddressFormComponent } from './composants/materials/address-form/address-form.component';
 import { TreeComponent } from './composants/materials/tree/tree.component';
 import { AuthComponent } from './composants/auth/auth.component';
+import { RegisterComponent } from './composants/register/register.component';
+import { ProfileComponent } from './composants/profile/profile.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,9 @@ import { AuthComponent } from './composants/auth/auth.component';
     TableComponent,
     AddressFormComponent,
     TreeComponent,
-    AuthComponent
+    AuthComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import { AuthComponent } from './composants/auth/auth.component';
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

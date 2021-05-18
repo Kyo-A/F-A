@@ -49,7 +49,7 @@ export class AuthComponent implements OnInit {
 
         this.isLoggedIn = true;
         this.isLoginFailed = false;
-        this.router.navigateByUrl('/personne');
+        this.router.navigateByUrl('/home');
       },
       err => {
         this.errorMessage = err.error.message;
